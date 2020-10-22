@@ -1,0 +1,10 @@
+# Generated file, do not edit. If you want to disable clang, just delete this file.
+build:clang --action_env='PATH=/opt/llvm/bin:/opt/llvm/bin:/home/shikugawa/dev/depot_tools/bin:/home/shikugawa/.pyenv/shims:/home/shikugawa/.pyenv/bin:/opt/llvm/bin:/home/shikugawa/.pyenv/shims:/home/shikugawa/.pyenv/bin:/home/shikugawa/.pyenv/shims:/home/shikugawa/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/shikugawa/dev/go/bin'
+build:clang --action_env=CC=clang
+build:clang --action_env=CXX=clang++
+build:clang --action_env='LLVM_CONFIG=/opt/llvm/bin/llvm-config'
+build:clang --repo_env='LLVM_CONFIG=/opt/llvm/bin/llvm-config'
+build:clang --linkopt='-L/opt/llvm/lib'
+build:clang --linkopt='-Wl,-rpath,/opt/llvm/lib'
+
+build --config=clang

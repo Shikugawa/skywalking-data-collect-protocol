@@ -1,5 +1,6 @@
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@rules_cc//cc:defs.bzl", "cc_proto_library")
+load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
 
 licenses(["notice"])  # Apache 2
 
@@ -14,4 +15,11 @@ cc_proto_library(
   name = "tracing_protocol_cc_proto",
   deps = [":tracing_protocol_proto_lib"],
   visibility = ["//visibility:public"],
+)
+
+cc_grpc_library(
+  name = "tracing_protocol_cc_grpc",
+  srcs = [":tracing_protocol_proto_lib"],
+  deps = [":tracing_protocol_cc_proto"],
+  grpc_only = True,
 )
