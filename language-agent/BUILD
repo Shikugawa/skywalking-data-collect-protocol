@@ -69,13 +69,13 @@ proto_library(
 
 cc_proto_library(
   name = "tracing_protocol_compat_cc_proto",
-  deps = [":tracing_protocol_proto_lib"],
+  deps = [":tracing_protocol_compat_proto_lib"],
 )
 
 cc_grpc_library(
   name = "tracing_protocol_compat_cc_grpc",
-  srcs = [":tracing_protocol_proto_lib"],
-  deps = [":tracing_protocol_cc_proto"],
+  srcs = [":tracing_protocol_compat_proto_lib"],
+  deps = [":tracing_protocol_compat_cc_proto"],
   grpc_only = True,
   generate_mocks = True,
 )
