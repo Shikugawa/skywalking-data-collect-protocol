@@ -64,7 +64,10 @@ cc_grpc_library(
 proto_library(
   name = "tracing_protocol_compat_proto_lib",
   srcs = ["TracingCompat.proto"],
-  deps = ["//common:common_protocol_proto_lib"],
+  deps = [
+    "//common:common_protocol_proto_lib",
+    ":tracing_protocol_proto_lib"
+  ],
 )
 
 cc_proto_library(
